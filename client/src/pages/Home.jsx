@@ -23,12 +23,12 @@ const Home = () => {
     ];
 
     const categories = [
-        { name: 'Venues', count: '50+' },
-        { name: 'Caterers', count: '40+' },
-        { name: 'Photographers', count: '30+' },
-        { name: 'Decorators', count: '35+' },
-        { name: 'Makeup Artists', count: '25+' },
-        { name: 'Entertainment', count: '20+' }
+        { name: 'Venues', count: '50+', image: '/images/vendor-venue.png' },
+        { name: 'Caterers', count: '40+', image: '/images/vendor-catering.png' },
+        { name: 'Photographers', count: '30+', image: '/images/vendor-photography.png' },
+        { name: 'Decorators', count: '35+', image: '/images/vendor-decor.png' },
+        { name: 'Makeup Artists', count: '25+', image: '/images/couple.png' },
+        { name: 'Entertainment', count: '20+', image: '/images/hero-bg.png' }
     ];
 
     const steps = [
@@ -122,7 +122,7 @@ const Home = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <img src="/logo.jpg" alt="Bandhoor Exhibition" className="about-img" />
+                            <img src="/images/about-expo.png" alt="Bandhoor Exhibition" className="about-img" />
                             <div className="about-image-accent"></div>
                         </motion.div>
                         <motion.div
@@ -181,9 +181,12 @@ const Home = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.05 }}
                                 whileHover={{ scale: 1.05 }}
+                                style={{ backgroundImage: `url(${cat.image})` }}
                             >
-                                <span className="category-count">{cat.count}</span>
-                                <h4>{cat.name}</h4>
+                                <div className="category-overlay">
+                                    <span className="category-count">{cat.count}</span>
+                                    <h4>{cat.name}</h4>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
