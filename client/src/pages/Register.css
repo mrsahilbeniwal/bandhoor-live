@@ -1,0 +1,133 @@
+/* Register Container */
+.register-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+/* Tabs */
+.register-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.register-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-gray-500);
+    background: var(--color-gray-100);
+    transition: all var(--transition-fast);
+}
+
+.register-tab:hover {
+    color: var(--color-gray-700);
+    background: var(--color-gray-200);
+}
+
+.register-tab.active {
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+.register-tab svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+    .register-tab span {
+        display: none;
+    }
+
+    .register-tab {
+        padding: var(--space-md);
+    }
+}
+
+/* Form */
+.register-form {
+    padding: var(--space-2xl);
+}
+
+@media (max-width: 640px) {
+    .register-form {
+        padding: var(--space-lg);
+    }
+}
+
+.form-header {
+    margin-bottom: var(--space-xl);
+    text-align: center;
+}
+
+.form-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+.form-header p {
+    color: var(--color-gray-500);
+    font-size: 0.95rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Success Message */
+.success-message {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--space-3xl);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.success-icon {
+    color: var(--color-success);
+    margin-bottom: var(--space-lg);
+}
+
+.success-message h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-primary);
+}
+
+.success-message p {
+    margin-bottom: var(--space-xl);
+    font-size: 1rem;
+}
+
+.success-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
