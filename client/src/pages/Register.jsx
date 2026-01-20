@@ -1,21 +1,24 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { User, Building, ArrowRight, CheckCircle } from 'lucide-react';
+import { User, Building, ArrowRight, CheckCircle, Loader } from 'lucide-react';
+import api from '../services/api';
 import './Register.css';
 
 const Register = () => {
     const [searchParams] = useSearchParams();
     const [activeTab, setActiveTab] = useState('visitor');
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
     const [visitorForm, setVisitorForm] = useState({
-        name: '',
+        fullName: '',
         email: '',
         phone: '',
         city: '',
-        weddingDate: '',
-        additionalInfo: ''
+        eventDate: '',
+        additionalNotes: ''
     });
 
     const [vendorForm, setVendorForm] = useState({
@@ -38,14 +41,32 @@ const Register = () => {
 
     const handleVisitorSubmit = async (e) => {
         e.preventDefault();
-        console.log('Visitor form submitted:', visitorForm);
-        setSubmitted(true);
+        setLoading(true);
+        setError('');
+
+        try {
+            await api.registerVisitor(visitorForm);
+            setSubmitted(true);
+        } catch (err) {
+            setError(err.message || 'Registration failed. Please try again.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     const handleVendorSubmit = async (e) => {
         e.preventDefault();
-        console.log('Vendor form submitted:', vendorForm);
-        setSubmitted(true);
+        setLoading(true);
+        setError('');
+
+        try {
+            await api.submitVendorApplication(vendorForm);
+            setSubmitted(true);
+        } catch (err) {
+            setError(err.message || 'Application submission failed. Please try again.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     const handleVisitorChange = (e) => {
