@@ -19,14 +19,14 @@ const Vendors = () => {
 
     // Placeholder vendors - will be replaced with API data
     const vendors = [
-        { id: 1, name: 'Royal Palace Venues', category: 'venues', location: 'Delhi', badge: 'Premium' },
-        { id: 2, name: 'Grand Feast Caterers', category: 'caterers', location: 'Mumbai', badge: 'Featured' },
-        { id: 3, name: 'Capture Moments Studio', category: 'photographers', location: 'Bangalore', badge: 'Premium' },
-        { id: 4, name: 'Elegant Decor Co', category: 'decorators', location: 'Jaipur', badge: 'Featured' },
-        { id: 5, name: 'Glam Squad Makeup', category: 'makeup', location: 'Delhi', badge: 'Premium' },
-        { id: 6, name: 'DJ Beats Entertainment', category: 'entertainment', location: 'Mumbai', badge: 'Featured' },
-        { id: 7, name: 'Lakeside Resort', category: 'venues', location: 'Udaipur', badge: 'Premium' },
-        { id: 8, name: 'Divine Cuisines', category: 'caterers', location: 'Chennai', badge: 'Featured' }
+        { id: 1, name: 'Royal Palace Venues', category: 'venues', location: 'Delhi', badge: 'Premium', image: '/images/vendor-venue.png' },
+        { id: 2, name: 'Grand Feast Caterers', category: 'caterers', location: 'Mumbai', badge: 'Featured', image: '/images/vendor-catering.png' },
+        { id: 3, name: 'Capture Moments Studio', category: 'photographers', location: 'Bangalore', badge: 'Premium', image: '/images/vendor-photography.png' },
+        { id: 4, name: 'Elegant Decor Co', category: 'decorators', location: 'Jaipur', badge: 'Featured', image: '/images/vendor-decor.png' },
+        { id: 5, name: 'Glam Squad Makeup', category: 'makeup', location: 'Delhi', badge: 'Premium', image: '/images/couple.png' },
+        { id: 6, name: 'DJ Beats Entertainment', category: 'entertainment', location: 'Mumbai', badge: 'Featured', image: '/images/hero-bg.png' },
+        { id: 7, name: 'Lakeside Resort', category: 'venues', location: 'Udaipur', badge: 'Premium', image: '/images/vendor-venue.png' },
+        { id: 8, name: 'Divine Cuisines', category: 'caterers', location: 'Chennai', badge: 'Featured', image: '/images/vendor-catering.png' }
     ];
 
     const filteredVendors = vendors.filter(vendor => {
@@ -102,7 +102,7 @@ const Vendors = () => {
                                     transition={{ delay: index * 0.05 }}
                                 >
                                     <div className="vendor-image">
-                                        <img src="/logo.jpg" alt={vendor.name} />
+                                        <img src={vendor.image} alt={vendor.name} />
                                         <span className="vendor-badge">{vendor.badge}</span>
                                     </div>
                                     <div className="vendor-info">

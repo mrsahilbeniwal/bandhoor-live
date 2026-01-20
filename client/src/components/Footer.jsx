@@ -12,7 +12,7 @@ const Footer = () => {
                     {/* Brand Column */}
                     <div className="footer-brand">
                         <Link to="/" className="footer-logo">
-                            <img src="/logo.jpg" alt="Bandhoor" className="footer-logo-img" />
+                            <img src="/logo.png" alt="Bandhoor" className="footer-logo-img" />
                         </Link>
                         <p className="footer-tagline">
                             Where Celebrations Find Their Perfect Match

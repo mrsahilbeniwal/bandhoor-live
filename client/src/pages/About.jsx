@@ -87,7 +87,7 @@ const About = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <img src="/logo.jpg" alt="Bandhoor Story" />
+                            <img src="/images/couple.png" alt="Bandhoor Story" />
                         </motion.div>
                     </div>
                 </div>

@@ -32,7 +32,7 @@ const Navbar = () => {
     <header className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <nav className="navbar-container container">
         <Link to="/" className="navbar-logo">
-          <img src="/logo.jpg" alt="Bandhoor" className="logo-img" />
+          <img src="/logo.png" alt="Bandhoor" className="logo-img" />
         </Link>
 
         <ul className={`navbar-links ${isOpen ? 'navbar-links-open' : ''}`}>

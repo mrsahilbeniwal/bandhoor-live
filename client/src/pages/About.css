@@ -10,7 +10,7 @@
 .page-hero-bg {
     position: absolute;
     inset: 0;
-    background: url('/logo.jpg') center/cover;
+    background: url('/logo.png') center/cover;
     opacity: 0.08;
 }
 
