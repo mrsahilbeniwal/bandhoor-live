@@ -550,3 +550,195 @@ ol {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent-dark);
 }
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+   ======================================== */
+
+/* Touch-friendly sizing */
+@media (max-width: 768px) {
+
+  /* Base adjustments */
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Reduce section padding on mobile */
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .section-lg {
+    padding: var(--space-3xl) 0;
+  }
+
+  /* Mobile container with better edge spacing */
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  /* Touch-friendly buttons */
+  .btn {
+    min-height: 48px;
+    padding: var(--space-md) var(--space-lg);
+    font-size: 1rem;
+  }
+
+  .btn-lg {
+    min-height: 52px;
+    padding: var(--space-md) var(--space-xl);
+    font-size: 1.05rem;
+  }
+
+  /* Touch-friendly form inputs */
+  .form-input,
+  .form-textarea,
+  .form-select {
+    min-height: 48px;
+    padding: var(--space-md);
+    font-size: 16px;
+    /* Prevents iOS zoom */
+  }
+
+  /* Improved card touch targets */
+  .card {
+    padding: var(--space-lg);
+  }
+
+  /* Better badge sizing */
+  .badge {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.7rem;
+  }
+
+  /* Reduce motion for performance */
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Hide decorative scrollbar on mobile */
+  ::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+}
+
+/* Extra small screens (phones in portrait) */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 6vw, 1.5rem);
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Stack buttons vertically */
+  .hero-cta,
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-md);
+  }
+
+  .hero-cta .btn,
+  .cta-buttons .btn {
+    width: 100%;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+}
+
+/* Safe area insets for notched phones */
+@supports (padding: max(0px)) {
+  .navbar {
+    padding-left: max(var(--space-md), env(safe-area-inset-left));
+    padding-right: max(var(--space-md), env(safe-area-inset-right));
+  }
+
+  .footer {
+    padding-bottom: max(var(--space-2xl), env(safe-area-inset-bottom));
+  }
+}
+
+/* Landscape phone optimizations */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: var(--space-3xl) 0;
+  }
+
+  .hero-content {
+    padding: var(--space-xl) 0;
+  }
+}
+
+/* High DPI screens - sharper text */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* Print styles */
+@media print {
+
+  .navbar,
+  .footer,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+}

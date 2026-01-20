@@ -506,3 +506,202 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+/* ========================================
+   HOME PAGE MOBILE OPTIMIZATIONS
+   ======================================== */
+
+/* Mobile Hero Improvements */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100svh;
+        /* Use small viewport height for mobile browsers */
+        padding-top: 80px;
+        /* Account for fixed navbar */
+    }
+
+    .hero-content {
+        padding: var(--space-2xl) var(--space-md);
+        max-width: 100%;
+    }
+
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: var(--space-xs) var(--space-md);
+        letter-spacing: 0.08em;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.15;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 var(--space-sm);
+        margin-bottom: var(--space-xl);
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 var(--space-md);
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        min-height: 52px;
+    }
+
+    .hero-scroll {
+        bottom: var(--space-lg);
+        font-size: 0.7rem;
+    }
+
+    .scroll-line {
+        height: 40px;
+    }
+
+    /* Hide decorative pseudo-elements on small screens */
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
+
+    /* Section headers */
+    .section-header {
+        padding: 0 var(--space-sm);
+        margin-bottom: var(--space-xl);
+    }
+
+    .section-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Features Grid */
+    .features-grid {
+        gap: var(--space-md);
+    }
+
+    .feature-card {
+        padding: var(--space-lg);
+    }
+
+    .feature-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+
+    /* About Grid */
+    .about-grid {
+        gap: var(--space-xl);
+    }
+
+    .about-content h2 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .about-list {
+        margin-bottom: var(--space-lg);
+    }
+
+    /* Category Cards - 2 columns on mobile */
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .category-card {
+        padding: var(--space-md);
+    }
+
+    .category-count {
+        font-size: 1.4rem;
+    }
+
+    .category-card h4 {
+        font-size: 0.8rem;
+    }
+
+    /* Steps Grid */
+    .steps-grid {
+        gap: var(--space-md);
+    }
+
+    .step-card {
+        padding: var(--space-lg);
+    }
+
+    .step-number {
+        font-size: 2.25rem;
+    }
+
+    /* CTA Section */
+    .cta-content {
+        padding: var(--space-xl);
+        margin: 0 var(--space-sm);
+        border-radius: var(--radius-lg);
+    }
+
+    .cta-content h2 {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+    }
+
+    .cta-content p {
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: clamp(1.75rem, 10vw, 2.25rem);
+    }
+
+    .hero-badge {
+        font-size: 0.65rem;
+    }
+
+    .features-grid {
+        gap: var(--space-sm);
+    }
+
+    .feature-card {
+        padding: var(--space-md);
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xs);
+    }
+
+    .category-card {
+        padding: var(--space-sm);
+    }
+
+    .category-count {
+        font-size: 1.2rem;
+    }
+
+    .category-card h4 {
+        font-size: 0.7rem;
+    }
+}
