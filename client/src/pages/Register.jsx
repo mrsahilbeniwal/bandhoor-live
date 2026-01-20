@@ -196,10 +196,10 @@ const Register = () => {
                                         <label className="form-label">Full Name *</label>
                                         <input
                                             type="text"
-                                            name="name"
+                                            name="fullName"
                                             className="form-input"
                                             placeholder="Enter your full name"
-                                            value={visitorForm.name}
+                                            value={visitorForm.fullName}
                                             onChange={handleVisitorChange}
                                             required
                                         />
